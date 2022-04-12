@@ -3,6 +3,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
+//models
+const Person = require('./models/Person')
+
 require('dotenv').config()
 
 //settings to read JSON - middleware
