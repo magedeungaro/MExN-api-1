@@ -23,4 +23,14 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.get('/', async (req, res) => {
+  try {
+    // same as Person.all in RoR/Active record
+    const people = await Person.find()
+    res.status(200).json(people)
+  } catch (error) {
+
+  }
+})
+
 module.exports = router
