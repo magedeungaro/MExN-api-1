@@ -28,8 +28,24 @@ router.get('/', async (req, res) => {
     // same as Person.all in RoR/Active record
     const people = await Person.find()
     res.status(200).json(people)
-  } catch (error) {
+  }
+  catch (error) {
+    res.status(500).json({ error })
+  }
+})
 
+router.get('/:id', async (req, res) => {
+  const id = req.params.id
+
+  try {
+    const person = await Person.findOne({ _id: id })
+
+    if (!person) return res.status(422).json({ message: 'User not found' })
+
+    res.status(200).json(person)
+  }
+  catch (error) {
+    res.status(500).json({ error })
   }
 })
 
