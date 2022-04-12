@@ -1,6 +1,9 @@
 //initial config
 const express = require('express')
+const mongoose = require('mongoose')
 const app = express()
+
+require('dotenv').config()
 
 //settings to read JSON - middleware
 app.use(
@@ -17,4 +20,10 @@ app.get('/', (req, res) => {
 })
 
 // port
-app.listen(3000)
+//stablish db connection
+mongoose.connect(process.env.MONGODB_CONNECTION)
+  .then(() => {
+    console.log('MongoDB connected')
+    app.listen(3000)
+  })
+  .catch(err => console.log(err))
