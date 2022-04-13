@@ -1,6 +1,6 @@
 Tutorial by Matheus (Hora de Codar) - https://www.youtube.com/watch?v=K5QaTfE5ylk
 
-To test the api, you can set up a mongodb atlas cluster database (free tier) and set a ``` MONGODB_CONNECTION ```variable in a ```.env``` file.
+To test the api, you can set up a mongodb atlas cluster database (free tier) and set a ``` MONGODB_CONNECTION ``` variable in a ```.env``` file.
 
 Running the api:
 
